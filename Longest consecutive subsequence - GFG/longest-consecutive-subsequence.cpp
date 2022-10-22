@@ -12,7 +12,7 @@ class Solution{
     //Function to return length of longest subsequence of consecutive integers.
     int findLongestConseqSubseq(int arr[], int N)
     {
-             int temp[100000]={0};
+       int max_ele = *max_element(arr,arr+N);
        int maxIndex=0;
        for(int i=0;i<N;i++){
            temp[arr[i]]=1;
