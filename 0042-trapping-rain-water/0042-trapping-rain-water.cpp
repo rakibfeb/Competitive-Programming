@@ -9,8 +9,12 @@ public:
             else res += lMax - height[l];
             l++;
         } else {
-            if(height[r] > rMax) rMax = height[r];
-            else res += rMax - height[r];
+            if(height[r] > rMax){
+                rMax = height[r];
+            } 
+            else{
+                res += rMax - height[r];
+            }
             r--;
         }
     }
