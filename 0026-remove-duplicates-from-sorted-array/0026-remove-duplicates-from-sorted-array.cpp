@@ -5,8 +5,9 @@ public:
         int n = nums.size();
         if(n == 1) return n;
         int j =1;
+        int i = 0;
         int temp = n;
-        for(int i = 0; j<n;)
+        while(j<n)
         {
             if(nums[i] == nums[j])
             {
