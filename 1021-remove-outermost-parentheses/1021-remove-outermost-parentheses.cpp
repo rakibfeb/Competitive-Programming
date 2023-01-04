@@ -10,29 +10,29 @@ public:
             {
                 flag += 1;
                 
-                //  result += flag > 1 ? "(" : "";
-                if(flag < 2)
-                {
-                    result = result+"";
-                }
-                else
-                {
-                    result = result + "(";
-                }
+                 result += flag > 1 ? "(" : "";
+//                 if(flag < 2)
+//                 {
+//                     result = result+"";
+//                 }
+//                 else
+//                 {
+//                     result = result + "(";
+//                 }
             
             } else 
             {
                 flag -= 1;
                 
-                //result += flag > 0 ? ")" : "";
-                if(flag < 1)
-                {
-                    result = result+"";
-                }
-                else
-                {
-                    result = result + ")";
-                }                            
+                result += flag > 0 ? ")" : "";
+                // if(flag < 1)
+                // {
+                //     result = result+"";
+                // }
+                // else
+                // {
+                //     result = result + ")";
+                // }                            
             }
             
         }
