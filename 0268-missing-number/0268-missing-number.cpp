@@ -6,10 +6,10 @@ public:
         int n = nums.size();
         for (int i = 0; i < n ; i++){
             
-            index_sum = index_sum + i;
+            index_sum = index_sum + i+1;
             here_sum = here_sum + nums[i];
         }
-        int temp = here_sum - index_sum;
-        return n-temp;
+        
+        return  index_sum-here_sum;
     }
 };
