@@ -12,7 +12,7 @@ public:
             if(nums[m] == target ) return m;
             
             if(nums[m] > target){
-                if(nums[pos] >= nums[m]) pos = m;
+                if(nums[pos] > nums[m]) pos = m;
                 e = m-1; 
             } 
             
