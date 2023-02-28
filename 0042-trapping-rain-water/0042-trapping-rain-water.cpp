@@ -1,23 +1,29 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
-    long long res = 0;
-    int lMax = 0, rMax = 0, l = 0, r = height.size()-1;
-    while(l <= r) {
-        if(height[l] <= height[r]) {
-            if(height[l] > lMax) lMax = height[l];
-            else res += lMax - height[l];
-            l++;
-        } else {
-            if(height[r] > rMax){
-                rMax = height[r];
-            } 
-            else{
-                res += rMax - height[r];
-            }
-            r--;
+        int size = height.size();
+        int maxl [size];
+        int maxr [size];
+        
+        maxl[0] = height[0];
+        for(int i = 1; i<size; i++){
+            maxl[i] = max(maxl[i-1],height[i]);
         }
-    }
-    return res;
+        
+        maxr[size-1] = height[size-1];
+        for(int  i = size-2; i>=0; i--){
+            maxr[i] = max(maxr[i+1],height[i]);
+        }
+        
+        int water[size];
+        for(int  i = 0 ; i<size; i++){
+            water[i] = min(maxl[i],maxr[i])- height[i];
+        }
+        
+        int sum = 0;
+        for(int i =0 ; i<size; i++){
+            sum += water[i];
+        }
+        return sum;
     }
 };
